@@ -1,12 +1,17 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
-#Diego Martín Sánchez 1ºASIR, ejercicio_xml
+#Diego Martin Sanchez 1ºASIR, ejercicio_xml
 
 #Importa la clase etree de la librería lxml
 from lxml import etree
 
 #Almacena el contenido del fichero XML en una variable
-fichxml=etree.parse("museos.xml")
+fich=etree.parse("museos.xml")
+#Almacena el nombre de espacio utilizado en el fichero xml
+raiz=fich.getroot()
+nsmap=raiz.tag[:-3]
 
 #Muestra el numero de museos de la provincia de Sevilla
-len fichxml.getroot().findall("document/folder/placemark")
+museos=fich.getroot().findall("%sDocument/%sFolder/%sPlacemark"%(nsmap,nsmap,nsmap))
+nummuseos=len(museos)
+print('Hay %d museos en Sevilla'%nummuseos)
