@@ -49,3 +49,6 @@ print('\nDatos del museo %s:'%petmuseo)
 for museo in listadatos[:]:
     if museo['NOMBRE'].lower() == petmuseo.lower():
         print ('\tNombre: %s\n\tDireccion: %s\n\tTelefono: %s\n\tHorario: %s'%(museo['NOMBRE'],museo['DIRECCION'],museo['TELEFONO'],museo['HORARIO']))
+        museoencontrado=False
+if museoencontrado:
+    print ('\tMuseo desconocido: %s'%petmuseo)
