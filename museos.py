@@ -52,3 +52,15 @@ for museo in listadatos[:]:
         museoencontrado=False
 if museoencontrado:
     print ('\tMuseo desconocido: %s'%petmuseo)
+
+#Muestra la url de la web y de la foto del museo introducido anteriormente
+for museo in listadatos[:]:
+    if museo['NOMBRE'].lower() == petmuseo.lower():
+        print ('\tWeb: %s\n\tFoto: %s\n'%(museo['WEB'],museo['Foto']))
+
+#Muestra la ubicacion del museo sobre OpenStreetMap
+print ('\nLos nombres de los distintos museos son:')
+for museo in museos:
+    if museo[0][0][1].text.lower() == petmuseo.lower():
+        ubicacion=museo[1][0].text.split(',')
+print ('http://www.openstreetmap.org/#map=18/%s/%s'%(ubicacion[1],ubicacion[0]))
