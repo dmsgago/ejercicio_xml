@@ -24,6 +24,8 @@ museos = fich.getroot().findall("%sDocument/%sFolder/%sPlacemark"%(nsmap,nsmap,n
 nummuseos = len(museos)
 print ('\nHay %d museos en Sevilla'%nummuseos)
 
+raw_input('\n(Haga clic para continuar...)')
+
 #Muestra el nombre de todos los museos
 print ('\nLos nombres de los distintos museos son:')
 for museo in museos:
@@ -31,6 +33,8 @@ for museo in museos:
     for propiedad in propiedades:
         if propiedad.attrib["name"] == "NOMBRE":
             print('\t%s'%propiedad.text)
+
+raw_input('\n(Haga clic para continuar...)')
 
 #Pide al usuario el nombre de un museo y muestra su direccion, telefono y horario
 petmuseo = raw_input('\nIntroduce el nombre de un museo: ')
@@ -57,6 +61,8 @@ if museoencontrado:
 for museo in listadatos[:]:
     if museo['NOMBRE'].lower() == petmuseo.lower():
         print ('\tWeb: %s\n\tFoto: %s\n'%(museo['WEB'],museo['Foto']))
+
+raw_input('\n(Haga clic para continuar...)')
 
 #Muestra la ubicacion del museo sobre OpenStreetMap
 print ('\nLos nombres de los distintos museos son:')
