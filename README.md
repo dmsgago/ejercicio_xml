@@ -1,4 +1,5 @@
 # ejercicio_xml
+===============
 Generar un programa en Python que:
 1. Muestre el número de museos en Sevilla.
 2. Muestra el nombre de todos los museos.
